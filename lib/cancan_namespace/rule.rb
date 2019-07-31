@@ -11,11 +11,11 @@ module CanCanNamespace
       conditions = extra_args.first
       if conditions.kind_of?(Hash) && conditions.has_key?(:context)
         @contexts = [conditions.delete(:context)].flatten.map(&:to_s)
-        conditions = nil if conditions.keys.empty?
+        extra_args.delete(conditions) if conditions.empty?
       else
         @contexts = []
       end
-      extra_args.reject! { |item| item.is_a?(Hash) && item.empty? }
+
       super
     end
     
