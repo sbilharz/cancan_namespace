@@ -15,7 +15,7 @@ module CanCanNamespace
       else
         @contexts = []
       end
-      debugger
+      extra_args.reject! { |item| item.is_a?(Hash) && item.empty? }
       super
     end
     
