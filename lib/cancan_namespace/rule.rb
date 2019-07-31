@@ -15,7 +15,7 @@ module CanCanNamespace
       else
         @contexts = []
       end
-      
+      debugger
       super
     end
     
