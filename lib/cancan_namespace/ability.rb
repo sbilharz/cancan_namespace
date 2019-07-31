@@ -28,11 +28,11 @@ module CanCanNamespace
     end
     
     def can(action = nil, subject = nil, conditions = nil, &block)
-      rules << CanCanNamespace::Rule.new(true, action, subject, conditions, block)
+      rules << CanCanNamespace::Rule.new(true, action, subject, conditions, &block)
     end
     
     def cannot(action = nil, subject = nil, conditions = nil, &block)
-      rules << CanCanNamespace::Rule.new(false, action, subject, conditions, block)
+      rules << CanCanNamespace::Rule.new(false, action, subject, conditions, &block)
     end
 
     def model_adapter(model_class, action, context = nil)
